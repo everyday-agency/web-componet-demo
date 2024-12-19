@@ -21,16 +21,13 @@ jobs:
               uses: actions/setup-node@v3
               with:
                   node-version: 18 # Adjust the Node.js version as needed
-                  cache: "pnpm"
-
-            - name: Install pnpm
-              run: corepack enable && corepack prepare pnpm@latest --activate
+                  cache: "npm"
 
             - name: Install Dependencies
-              run: pnpm install
+              run: npm install
 
             - name: Build Project
-              run: pnpm build
+              run: npm run build
 
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v4
