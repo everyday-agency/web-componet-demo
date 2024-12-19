@@ -6,9 +6,12 @@ on:
             - main # Adjust this if your branch is different
 
 permissions:
-    contents: read
-    pages: write
-    id-token: write
+    # contents: read
+    # pages: write
+    # id-token: write
+    pull-requests: write
+    issues: write
+    repository-projects: write
 
 jobs:
     build-deploy:
