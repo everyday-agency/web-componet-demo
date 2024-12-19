@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
     push:
         branches:
-            - main # Change this to your default branch if it's not "main"
+            - main # Adjust this if your branch is different
 
 permissions:
     contents: read
@@ -20,11 +20,11 @@ jobs:
             - name: Setup Node.js
               uses: actions/setup-node@v3
               with:
-                  node-version: 18 # Use the Node.js version you prefer
+                  node-version: 18 # Adjust the Node.js version as needed
                   cache: "pnpm"
 
             - name: Install pnpm
-              run: npm install -g pnpm
+              run: corepack enable && corepack prepare pnpm@latest --activate
 
             - name: Install Dependencies
               run: pnpm install
